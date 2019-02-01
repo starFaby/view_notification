@@ -1,0 +1,40 @@
+<app-header></app-header>
+<app-sidebar (collapsedEvent)="receiveCollapsed($event)"></app-sidebar>
+<section class="main-container" [ngClass]="{collapsed: collapedSideBar}">
+  <router-outlet></router-outlet>
+  <div class="fixed-bottom m-4">
+    <div class="float-lg-right"><button class="rounded-circle  bg-danger p-4" title="Agregar Comentario" data-toggle="modal"
+        data-target="#exampleModal"><span class="glyphicon glyphicon-plus">X</span></button></div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center bg-dark text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Notificación</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="seletPersona">Persona</label>
+              <select class="form-control" id="seletPersona">
+                <option value="1725">Bryan Quito</option>
+                <option value="1725">Fabian Estrella</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="txtDetalle">Detalle</label>
+              <input type="text" class="form-control" id="txtDetalle" placeholder="Escribir Detalle">
+            </div>
+            <button type="button" class="btn btn-primary">enviar</button>
+          </form>
+        </div>
+        <div class="modal-footer  bg-dark text-white">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
